@@ -1,0 +1,19 @@
+<div id="container">
+    <% @how_majestics.each do |hm| %>
+        <div style="position:absolute; left:<%=hm.posx%>px;top:<%=hm.posy%>px;color:<%= hm.color %>;font-size:<%= hm.size %>px;">
+            <%= hm.message %>
+        </div>
+    <% end %>
+</div>
+
+
+<div id="new" style="position:fixed;bottom:70px;color:white;font-size:14px;">
+    <span style="background-color:rgba(0,0,0,.6);padding:10px;position:relative">
+        <a href="/how_majestics/new">New! (wow)</a> <a href="/api">API</a>
+    </span>
+</div>
+<div id="wallet" style="position:fixed;bottom:20px;color:white;font-size:14px;">
+    <span style="background-color:rgba(0,0,0,.6);padding:10px;position:relative">
+        <img src="/assets/iconsmall.png" style="position:relative;top:18px;" /> DGzyWJfcu5Uy65yoFEQRn5ByJKSYBnKuxF 
+    </span>
+</div>

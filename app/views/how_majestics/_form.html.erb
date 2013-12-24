@@ -1,0 +1,44 @@
+    <%= simple_form_for(@how_majestic) do |f| %>
+      <% if @how_majestic.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@how_majestic.errors.count, "error") %> prohibited this how_majestic from being saved:</h2>
+
+          <ul>
+          <% @how_majestic.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :message %><br />
+        <%= f.text_field :message %>
+      </div>
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </div> 
+      <div class="field">
+        <%= f.label :size %><br />
+        <%= f.select(:size, options_for_select((11..28).to_a)) %>
+      </div>
+      <div class="field">
+        <%= f.label :posx %><br />
+        <%= f.number_field :posx %>
+      </div>
+      <div class="field">
+        <%= f.label :posy %><br />
+        <%= f.number_field :posy %> (Value over 690 might end you off screen)
+      </div>
+      <div class="field">
+          <%= f.input :color, as: :minicolors %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+
+    <script type="text/javascript" charset="utf-8">
+        $('#how_majestic_color').minicolors();
+    </script>

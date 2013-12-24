@@ -1,0 +1,27 @@
+<h1>Listing how_majestics</h1>
+
+<table>
+  <tr>
+    <th>Message</th>
+    <th>Posx</th>
+    <th>Posy</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @how_majestics.each do |how_majestic| %>
+  <tr>
+    <td><%= how_majestic.message %></td>
+    <td><%= how_majestic.posx %></td>
+    <td><%= how_majestic.posy %></td>
+    <td><%= link_to 'Show', how_majestic %></td>
+    <td><%= link_to 'Edit', edit_how_majestic_path(how_majestic) %></td>
+    <td><%= link_to 'Destroy', how_majestic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New How majestic', new_how_majestic_path %>
