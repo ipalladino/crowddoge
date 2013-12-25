@@ -25,6 +25,7 @@ class HowMajesticsController < ApplicationController
   # GET /how_majestics/new
   # GET /how_majestics/new.json
   def new
+    @how_majestics = HowMajestic.all
     @how_majestic = HowMajestic.new
     respond_to do |format|
       format.html # new.html.erb

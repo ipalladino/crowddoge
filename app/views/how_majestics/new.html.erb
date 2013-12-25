@@ -1,4 +1,4 @@
-<div style="position:relative; float:left; padding:20px; background-color:rgba(0,0,0,.5);clear:both;">
+<div style="position:relative; float:left; padding:20px; background-color:rgba(0,0,0,.7);clear:both; width:100%;height:100%;z-index: 10;">
 <h1>New Message, How Majestic</h1>
 
 <%= render 'form' %>
@@ -8,3 +8,23 @@
 </div>
 
 </div>
+
+<div id="container" style="position:absolute;">
+    <% @how_majestics.each do |hm| %>
+        <div style="position:absolute; left:<%=hm.posx%>px;top:<%=hm.posy%>px;color:<%= hm.color %>;font-size:<%= hm.size %>px;">
+            <%= hm.message %>
+        </div>
+    <% end %>
+</div>
+
+
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function (e) {
+    $('body').click(function (e) { //Default mouse Position 
+            alert("Your message will be positioned on x:"+e.pageX + ' , y:' + e.pageY);
+            $("#how_majestic_posx").val(e.pageX)
+            $("#how_majestic_posy").val(e.pageY)
+    });
+});
+</script>
