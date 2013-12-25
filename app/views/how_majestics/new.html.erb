@@ -26,5 +26,19 @@ $(document).ready(function (e) {
             $("#how_majestic_posx").val(e.pageX)
             $("#how_majestic_posy").val(e.pageY)
     });
+    
+    $(".how_majestic_color").click(function(){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+    })
+    $(".minicolors-swatch").css({"display":"none"});
+    
+    $("input").click(function(e){
+        e.stopImmediatePropagation();
+    })
+    
+    $("select").click(function(e){
+        e.stopImmediatePropagation();
+    })
 });
 </script>
