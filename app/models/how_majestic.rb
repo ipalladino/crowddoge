@@ -3,6 +3,7 @@ class HowMajestic < ActiveRecord::Base
   #validate :check_ip
   validates :message, :posx, :posy, presence: true
   validates_numericality_of :posx, :posy, :size ,:only_integer => true
+  validates_numericality_of :size, :less_than => 29
 
     private
       def check_ip
