@@ -24,12 +24,12 @@
         <%= f.select(:size, options_for_select((11..28).to_a)) %>
       </div>
       <div class="field">
-        <%= f.label :posx %><br />
-        <%= f.number_field :posx %>
+        <%= f.label :posx , "Position on X axis" %><br />
+        <%= f.number_field :posx %> pixels (Value over 1900 might end you off screen)
       </div>
       <div class="field">
-        <%= f.label :posy %><br />
-        <%= f.number_field :posy %> (Value over 690 might end you off screen)
+        <%= f.label :posy , "Position on Y axis" %><br />
+        <%= f.number_field :posy %> pixels (Value over 690 might end you off screen)
       </div>
       <div class="field">
           <%= f.input :color, as: :minicolors %>
