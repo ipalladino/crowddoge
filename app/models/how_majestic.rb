@@ -1,6 +1,6 @@
 class HowMajestic < ActiveRecord::Base
   attr_accessible :message, :posx, :posy, :color, :ip, :name, :size
-  validate :check_ip
+  #validate :check_ip
   validates :message, :posx, :posy, presence: true
   validates_numericality_of :posx, :posy, :size ,:only_integer => true
 
